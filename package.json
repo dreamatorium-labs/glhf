@@ -1,0 +1,31 @@
+{
+  "name": "mono",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.44.9",
+    "@types/node": "^20.10.4",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.7",
+    "@types/react-native": "^0.71.2",
+    "@walless/eslint-config": "^0.0.7",
+    "@walless/tsconfig": "^0.0.1",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.0",
+    "turbo": "latest",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "yarn@3.6.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
