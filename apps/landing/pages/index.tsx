@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { bangers } from 'utils/font';
 
 export const LandingPage: FC = () => {
 	return (
@@ -20,8 +21,10 @@ const styles = StyleSheet.create({
 		bottom: 0,
 		alignItems: 'center',
 		justifyContent: 'center',
-	},
+	} as never,
 	title: {
 		color: 'white',
+		fontSize: 32,
+		fontFamily: bangers.style.fontFamily,
 	},
 });
