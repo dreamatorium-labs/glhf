@@ -26,5 +26,6 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		paddingTop: navigationHeight,
+		paddingHorizontal: 18,
 	},
 });
