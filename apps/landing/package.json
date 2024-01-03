@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@repo/ui": "*",
     "@walless/gui": "^0.0.3",
     "@walless/icons": "^0.0.2",
     "firebase": "^10.7.1",
