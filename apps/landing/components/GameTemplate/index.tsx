@@ -1,8 +1,14 @@
 import type { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Animated, {
+	interpolateColor,
+	useAnimatedStyle,
+	useSharedValue,
+	withTiming,
+} from 'react-native-reanimated';
 import { Hoverable } from '@walless/gui';
 import Image from 'next/image';
-import { montserrat, russo } from 'utils/style';
+import { buttonStyle, montserrat, russo } from 'utils/style';
 
 export interface GameTemplateProps {
 	src: string;
@@ -17,8 +23,31 @@ export const GameTemplate: FC<GameTemplateProps> = ({
 	categories,
 	name,
 }) => {
+	const opacity = useSharedValue(0);
+
+	const opacityAnimatedStyle = useAnimatedStyle(() => {
+		return {
+			opacity: opacity.value,
+		};
+	}, [opacity]);
+
+	const bgColorAnimatedStyle = useAnimatedStyle(() => {
+		const backgroundColor = interpolateColor(
+			opacity.value,
+			[0, 1],
+			['#17170F', '#2c322c'],
+		);
+
+		return { backgroundColor };
+	}, [opacity]);
+
 	return (
-		<Hoverable style={styles.container}>
+		<Hoverable
+			style={[styles.container, bgColorAnimatedStyle]}
+			onHoverIn={() => (opacity.value = withTiming(1))}
+			onHoverOut={() => (opacity.value = withTiming(0))}
+			hoverOpacity={1}
+		>
 			<Image src={src} alt={alt} width={355} height={283} />
 			<View style={styles.detailContainer}>
 				<View style={styles.categoryContainer}>
@@ -32,6 +61,15 @@ export const GameTemplate: FC<GameTemplateProps> = ({
 					<Text style={styles.title}>{name}</Text>
 				</View>
 			</View>
+			<Animated.View style={[styles.overlay, opacityAnimatedStyle]}>
+				<View style={[styles.overlay, styles.overlayBg]} />
+				<Hoverable
+					style={[buttonStyle.button, styles.button]}
+					onHoverIn={() => (opacity.value = 1)}
+				>
+					<Text style={buttonStyle.title}>Edit</Text>
+				</Hoverable>
+			</Animated.View>
 		</Hoverable>
 	);
 };
@@ -44,7 +82,6 @@ const styles = StyleSheet.create({
 		height: 385,
 		borderRadius: 10,
 		overflow: 'hidden',
-		backgroundColor: '#17170F',
 	},
 	detailContainer: {
 		padding: 15,
@@ -74,5 +111,23 @@ const styles = StyleSheet.create({
 		fontSize: 22,
 		fontWeight: 'bold',
 		color: '#ffffff',
+	},
+	overlay: {
+		position: 'absolute',
+		top: 0,
+		left: 0,
+		right: 0,
+		bottom: 385 - 283,
+		justifyContent: 'center',
+	},
+	overlayBg: {
+		opacity: 0.7,
+		bottom: 0,
+		backgroundColor: '#0f180f',
+	},
+	button: {
+		alignSelf: 'center',
+		paddingVertical: 10,
+		paddingHorizontal: 25,
 	},
 });
