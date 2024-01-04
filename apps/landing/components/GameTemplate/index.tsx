@@ -8,6 +8,8 @@ import Animated, {
 } from 'react-native-reanimated';
 import { Hoverable } from '@walless/gui';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { gameActions } from 'state/game';
 import { buttonStyle, montserrat, russo } from 'utils/style';
 
 export interface GameTemplateProps {
@@ -23,6 +25,7 @@ export const GameTemplate: FC<GameTemplateProps> = ({
 	categories,
 	name,
 }) => {
+	const router = useRouter();
 	const opacity = useSharedValue(0);
 
 	const opacityAnimatedStyle = useAnimatedStyle(() => {
@@ -40,6 +43,14 @@ export const GameTemplate: FC<GameTemplateProps> = ({
 
 		return { backgroundColor };
 	}, [opacity]);
+
+	const handlePress = () => {
+		gameActions.update({
+			banner: src,
+			template: name,
+		});
+		router.push('/game-create/customize');
+	};
 
 	return (
 		<Hoverable
@@ -66,6 +77,7 @@ export const GameTemplate: FC<GameTemplateProps> = ({
 				<Hoverable
 					style={[buttonStyle.button, styles.button]}
 					onHoverIn={() => (opacity.value = 1)}
+					onPress={handlePress}
 				>
 					<Text style={buttonStyle.title}>Edit</Text>
 				</Hoverable>
