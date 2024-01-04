@@ -10801,6 +10801,7 @@ __metadata:
     sst: ^2.38.7
     turbo: latest
     typescript: ^5.2.2
+    valtio: ^1.12.1
   languageName: unknown
   linkType: soft
 
