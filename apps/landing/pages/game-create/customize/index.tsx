@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from '@walless/gui';
+import CustomizeView from 'components/CustomizeView';
 import Layout from 'components/Layout';
 import ProgressIndicator from 'components/ProgressIndicator';
 import { useRouter } from 'next/router';
-import { gameState } from 'state/game';
 import { bangers, buttonStyle, montserrat } from 'utils/style';
-import { useSnapshot } from 'valtio';
+
+import CustomizeForm from './CustomizeForm';
 
 export const GameCustomizePage = () => {
 	const router = useRouter();
-	const { banner } = useSnapshot(gameState);
 
 	const handleContinue = () => {
 		router.push('/game-create/customize');
@@ -35,6 +35,9 @@ export const GameCustomizePage = () => {
 					{`Personalize characters, environments, and features to match your unique vision.\nExplore customization options to make your game stand out.`}
 				</Text>
 			</View>
+			<CustomizeView bannerSrc="/visual/tetris-preview.png">
+				<CustomizeForm />
+			</CustomizeView>
 		</Layout>
 	);
 };
