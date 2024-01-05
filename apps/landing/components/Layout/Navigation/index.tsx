@@ -1,7 +1,6 @@
 import type { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Link from 'next/link';
-import { navigationHeight } from 'utils/config';
 import { colors, russo } from 'utils/style';
 
 export const PageNavigation: FC = () => {
@@ -21,14 +20,10 @@ export default PageNavigation;
 
 const styles = StyleSheet.create({
 	container: {
-		position: 'fixed' as never,
-		top: 0,
-		left: 0,
-		right: 0,
-		height: navigationHeight,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		paddingHorizontal: 18,
+		paddingHorizontal: 80,
+		paddingVertical: 40,
 		alignItems: 'center',
 	},
 	branding: {
