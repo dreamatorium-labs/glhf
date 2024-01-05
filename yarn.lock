@@ -3969,6 +3969,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-community/slider@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "@react-native-community/slider@npm:4.5.0"
+  checksum: 65f0399ab0b3a052b257ae4004364cb0ea01a0e8749c7547dcf24d7f2f448a807a49eb6c1daaa3b0037b2ac576d86372a7818ffe8b4421cddf3d307c3744d709
+  languageName: node
+  linkType: hard
+
 "@react-native/assets-registry@npm:^0.73.1":
   version: 0.73.1
   resolution: "@react-native/assets-registry@npm:0.73.1"
@@ -10789,6 +10796,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "mono@workspace:."
   dependencies:
+    "@react-native-community/slider": ^4.5.0
     "@types/eslint": ^8.44.9
     "@types/node": ^20.10.4
     "@types/react": ^18.0.28
