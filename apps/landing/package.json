@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-native-community/slider": "^4.5.0",
     "@walless/gui": "^0.0.3",
     "@walless/icons": "^0.0.2",
     "firebase": "^10.7.1",
