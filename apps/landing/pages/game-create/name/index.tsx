@@ -3,46 +3,38 @@ import { Button } from '@walless/gui';
 import CustomizeView from 'components/CustomizeView';
 import Layout from 'components/Layout';
 import ProgressIndicator from 'components/ProgressIndicator';
-import { useRouter } from 'next/router';
 import { bangers, buttonStyle, montserrat } from 'utils/style';
 
-import CustomizeForm from './CustomizeForm';
+import NameForm from './NameForm';
 
-export const GameCustomizePage = () => {
-	const router = useRouter();
-
-	const handleContinue = () => {
-		router.push('/game-create/name');
-	};
-
+export const NameGamePage = () => {
 	return (
 		<Layout style={styles.container}>
 			<View style={styles.titleContainer}>
-				<ProgressIndicator steps={4} currentStep={2} />
+				<ProgressIndicator steps={4} currentStep={3} />
 				<View style={styles.headContainer}>
-					<Text style={styles.title}>CUSTOMIZE YOUR GAME</Text>
+					<Text style={styles.title}>NAME YOUR GAME</Text>
 					<Button
 						title="Continue"
 						style={[buttonStyle.button, styles.continueBtn]}
 						titleStyle={buttonStyle.title}
-						onPress={handleContinue}
 					/>
 				</View>
 				<Text style={styles.subTitle}>
-					{`Personalize characters, environments, and features to match your unique vision.\nExplore customization options to make your game stand out.`}
+					{`Create a unique identity for your game by choosing a name and securing a custom domain.\nElevate your brand, increase visibility, and explore naming and domain options now.`}
 				</Text>
 			</View>
 			<CustomizeView
 				bannerSrc="/visual/tetris-preview.png"
-				title="Customize your game"
+				title="Name your game"
 			>
-				<CustomizeForm />
+				<NameForm />
 			</CustomizeView>
 		</Layout>
 	);
 };
 
-export default GameCustomizePage;
+export default NameGamePage;
 
 const styles = StyleSheet.create({
 	container: {

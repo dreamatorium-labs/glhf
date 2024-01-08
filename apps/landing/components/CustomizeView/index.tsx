@@ -6,16 +6,15 @@ import { montserrat } from 'utils/style';
 interface Props {
 	children: ReactNode;
 	bannerSrc: string;
+	title: string;
 }
 
-export const CustomizeView: FC<Props> = ({ children, bannerSrc }) => {
+export const CustomizeView: FC<Props> = ({ children, bannerSrc, title }) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.leftContainer}>
 				<View style={styles.titleContainer}>
-					<Text style={[styles.title, styles.leftTitle]}>
-						Customize your game
-					</Text>
+					<Text style={[styles.title, styles.leftTitle]}>{title}</Text>
 				</View>
 				<View style={styles.leftContent}>{children}</View>
 			</View>
