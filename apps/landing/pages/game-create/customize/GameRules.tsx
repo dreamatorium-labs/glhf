@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Slider from '@react-native-community/slider';
+import RadioButtonGroup from 'components/RadioButtonGroup';
 import { gameActions, gameState } from 'state/game';
 import { montserrat } from 'utils/style';
 import { useSnapshot } from 'valtio';
@@ -14,6 +15,9 @@ export const GameRules = () => {
 	const [initialSpeed, setInitialSpeed] = useState(initialValue);
 	const handleCompleteSliding = (value: number) => {
 		gameActions.update({ initialSpeed: value });
+	};
+	const handleSelectDifficulty = (value: string) => {
+		gameActions.update({ difficulty: value });
 	};
 
 	return (
@@ -37,6 +41,13 @@ export const GameRules = () => {
 					<Text style={styles.sliderValue}>{initialSpeed}</Text>
 				</View>
 			</View>
+			<View style={sharedStyle.subFieldContainer}>
+				<Text style={sharedStyle.subField}>Difficulty</Text>
+				<RadioButtonGroup
+					style={styles.radioBtn}
+					onSelect={handleSelectDifficulty}
+				/>
+			</View>
 		</View>
 	);
 };
@@ -57,5 +68,9 @@ const styles = StyleSheet.create({
 	sliderValue: {
 		fontFamily: montserrat.style.fontFamily,
 		color: '#ffffff',
+	},
+	radioBtn: {
+		flexDirection: 'row',
+		gap: 30,
 	},
 });

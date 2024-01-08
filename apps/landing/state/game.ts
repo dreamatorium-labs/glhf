@@ -6,6 +6,7 @@ interface GameState {
 	gameName: string;
 	domainName: string;
 	initialSpeed: number;
+	difficulty: string;
 }
 
 export const gameState = proxy<GameState>({
@@ -14,6 +15,7 @@ export const gameState = proxy<GameState>({
 	gameName: '',
 	domainName: '',
 	initialSpeed: 30,
+	difficulty: '',
 });
 
 export const gameActions = {

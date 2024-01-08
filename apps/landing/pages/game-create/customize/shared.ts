@@ -18,12 +18,11 @@ export const sharedStyle = StyleSheet.create({
 	subField: {
 		fontFamily: montserratLight.style.fontFamily,
 		color: '#ffffff',
-		width: 200,
+		width: 150,
 		fontSize: 13,
 		fontWeight: '300',
 	},
 	subFieldInputContainer: {
-		width: 300,
 		borderRadius: 100,
 	},
 	subFieldInput: {
