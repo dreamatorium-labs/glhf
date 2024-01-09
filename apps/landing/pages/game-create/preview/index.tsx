@@ -3,46 +3,38 @@ import { Button } from '@walless/gui';
 import CustomizeView from 'components/CustomizeView';
 import Layout from 'components/Layout';
 import ProgressIndicator from 'components/ProgressIndicator';
-import { useRouter } from 'next/router';
 import { bangers, buttonStyle, montserrat } from 'utils/style';
 
-import NameForm from './NameForm';
+import PreviewForm from './PreviewForm';
 
-export const NameGamePage = () => {
-	const router = useRouter();
-
-	const handleContinue = () => {
-		router.push('/game-create/preview');
-	};
-
+export const PreviewPublishPage = () => {
 	return (
 		<Layout style={styles.container}>
 			<View style={styles.titleContainer}>
-				<ProgressIndicator steps={4} currentStep={3} />
+				<ProgressIndicator steps={4} currentStep={4} />
 				<View style={styles.headContainer}>
-					<Text style={styles.title}>NAME YOUR GAME</Text>
+					<Text style={styles.title}>PREVIEW & PUBLISH</Text>
 					<Button
-						title="Continue"
+						title="Publish"
 						style={[buttonStyle.button, styles.continueBtn]}
 						titleStyle={buttonStyle.title}
-						onPress={handleContinue}
 					/>
 				</View>
 				<Text style={styles.subTitle}>
-					{`Create a unique identity for your game by choosing a name and securing a custom domain.\nElevate your brand, increase visibility, and explore naming and domain options now.`}
+					{`Get a snieak peek of your game before the world sees it.\nPreview and polish every detail before hitting publish.`}
 				</Text>
 			</View>
 			<CustomizeView
 				bannerSrc="/visual/tetris-preview.png"
-				title="Name your game"
+				title="Preview & Publish"
 			>
-				<NameForm />
+				<PreviewForm />
 			</CustomizeView>
 		</Layout>
 	);
 };
 
-export default NameGamePage;
+export default PreviewPublishPage;
 
 const styles = StyleSheet.create({
 	container: {
