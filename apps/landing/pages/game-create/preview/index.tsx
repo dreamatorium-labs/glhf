@@ -3,11 +3,18 @@ import { Button } from '@walless/gui';
 import CustomizeView from 'components/CustomizeView';
 import Layout from 'components/Layout';
 import ProgressIndicator from 'components/ProgressIndicator';
+import { useRouter } from 'next/router';
 import { bangers, buttonStyle, montserrat } from 'utils/style';
 
 import PreviewForm from './PreviewForm';
 
 export const PreviewPublishPage = () => {
+	const router = useRouter();
+
+	const handleContinue = () => {
+		router.push('/result');
+	};
+
 	return (
 		<Layout style={styles.container}>
 			<View style={styles.titleContainer}>
@@ -18,6 +25,7 @@ export const PreviewPublishPage = () => {
 						title="Publish"
 						style={[buttonStyle.button, styles.continueBtn]}
 						titleStyle={buttonStyle.title}
+						onPress={handleContinue}
 					/>
 				</View>
 				<Text style={styles.subTitle}>
