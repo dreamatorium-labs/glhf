@@ -1,7 +1,7 @@
 module.exports = {
 	root: true,
 	extends: ['@walless/eslint-config'],
-	ignorePatterns: ['node_modules'],
+	ignorePatterns: ['node_modules', 'sst-env.d.ts'],
 	env: {
 		node: true,
 	},

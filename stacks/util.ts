@@ -1,13 +1,23 @@
-const landingAlias = {
+const landingAlias: Record<string, string> = {
 	production: ' ',
 	staging: 'stg.',
 	development: 'dev.',
 };
 
-export const sslArn =
-	'arn:aws:acm:us-east-1:984261700405:certificate/e5067454-446f-405c-bec2-c18f2766baca';
+export const sslArn = process.env.SSL_ARN;
 
 export const landingDomainFromStage = (stage: string) => {
 	const prefix = landingAlias[stage] || `${stage}.`;
+	return `${prefix.trim()}glhf.world`;
+};
+
+const apiAlias: Record<string, string> = {
+	production: 'api.',
+	staging: 'api-stg.',
+	development: 'api-dev.',
+};
+
+export const apiDomainFromStage = (stage: string) => {
+	const prefix = apiAlias[stage] || `${stage}.`;
 	return `${prefix.trim()}glhf.world`;
 };

@@ -1,6 +1,7 @@
 import type { SSTConfig } from 'sst';
 
-import Landing from './stacks/landing';
+import { ApiStack } from './stacks/api';
+import { LandingStack } from './stacks/landing';
 
 export default {
 	config() {
@@ -10,6 +11,7 @@ export default {
 		};
 	},
 	stacks(app) {
-		app.stack(Landing);
+		app.stack(ApiStack);
+		app.stack(LandingStack);
 	},
 } satisfies SSTConfig;

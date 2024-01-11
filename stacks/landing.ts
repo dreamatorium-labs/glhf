@@ -5,7 +5,7 @@ import { NextjsSite } from 'sst/constructs';
 
 import { landingDomainFromStage, sslArn } from './util';
 
-export const Landing = ({ stack, app }: StackContext) => {
+export const LandingStack = ({ stack, app }: StackContext) => {
 	const domain = landingDomainFromStage(app.stage);
 	const certificate = Certificate.fromCertificateArn(stack, 'w-cert', sslArn);
 	const hostedZone = HostedZone.fromLookup(stack, 'HostedZone', {
@@ -30,4 +30,4 @@ export const Landing = ({ stack, app }: StackContext) => {
 	});
 };
 
-export default Landing;
+export default LandingStack;
