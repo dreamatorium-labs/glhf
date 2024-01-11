@@ -1,6 +1,4 @@
-import { gql } from 'apollo-server-lambda';
-
-export const typeDefs = gql`
+export const typeDefs = `#graphql
 	type Query {
 		greeting: String
 	}
@@ -14,5 +12,3 @@ export const typeDefs = gql`
 		profileImage: String
 	}
 `;
-
-export default typeDefs;

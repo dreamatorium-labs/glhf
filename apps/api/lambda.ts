@@ -1,7 +1,18 @@
-import { ApolloServer } from 'apollo-server-lambda';
+import { ApolloServer } from '@apollo/server';
+import {
+	handlers,
+	startServerAndCreateLambdaHandler,
+} from '@as-integrations/aws-lambda';
 
-import { apolloConfigs } from './index';
+import { resolvers } from './resolvers';
+import { typeDefs } from './schema';
 
-const apolloServer = new ApolloServer(apolloConfigs);
+const server = new ApolloServer({
+	typeDefs,
+	resolvers,
+});
 
-export const handler = apolloServer.createHandler();
+export const handler = startServerAndCreateLambdaHandler(
+	server as never,
+	handlers.createAPIGatewayProxyEventV2RequestHandler(),
+);
