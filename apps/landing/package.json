@@ -23,6 +23,6 @@
     "valtio": "^1.12.1"
   },
   "devDependencies": {
-    "react-native": "^0.73.1"
+    "react-native": "^0.71.2"
   }
 }

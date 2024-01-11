@@ -1,1 +1,1 @@
-/// <reference path="../../.sst/types/index.ts" />
+import 'sst';

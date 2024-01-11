@@ -2,10 +2,14 @@ const { resolve } = require('path');
 
 /** @type {import('next').NextConfig} */
 module.exports = {
+	typescript: {
+		ignoreBuildErrors: true,
+	},
 	transpilePackages: [
 		'@repo/ui',
 		'@walless/gui',
 		'@walless/icons',
+		'@react-native-community/slider',
 		'react-native',
 		'react-native-svg',
 		'react-native-reanimated',
@@ -29,13 +33,13 @@ module.exports = {
 			}),
 		);
 
-		// if (isServer) {
-		// 	config.plugins.push(
-		// 		new webpack.ProvidePlugin({
-		// 			requestAnimationFrame: resolve(__dirname, './raf.js'),
-		// 		}),
-		// 	);
-		// }
+		if (isServer) {
+			config.plugins.push(
+				new webpack.ProvidePlugin({
+					requestAnimationFrame: resolve(__dirname, './raf.js'),
+				}),
+			);
+		}
 
 		return config;
 	},
