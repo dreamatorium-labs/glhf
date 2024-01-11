@@ -31,7 +31,9 @@ export const gameState = proxy<GameState>({
 export const gameActions = {
 	update: (value: Partial<GameState>) => {
 		for (const key in value) {
-			gameState[key as keyof GameState] = value[key as keyof GameState];
+			gameState[key as keyof GameState] = value[
+				key as keyof GameState
+			] as never;
 		}
 	},
 };
