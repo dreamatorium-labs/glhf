@@ -28,5 +28,11 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "apollo-server-lambda": "^3.13.0",
+    "graphql": "^16.8.1",
+    "graphql-subscriptions": "^2.0.0",
+    "jsonwebtoken": "^9.0.2"
+  }
 }

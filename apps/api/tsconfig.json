@@ -1,0 +1,47 @@
+{
+  "extends": "@walless/tsconfig/next.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "mutation": [
+        "./mutation"
+      ],
+      "mutation/*": [
+        "./mutation/*"
+      ],
+      "query": [
+        "./query"
+      ],
+      "query/*": [
+        "./query/*"
+      ],
+      "subscription": [
+        "./subscription"
+      ],
+      "subscription/*": [
+        "./subscription/*"
+      ],
+      "types/*": [
+        "./types/*"
+      ],
+      "utils/*": [
+        "./utils/*"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "next.config.js",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
