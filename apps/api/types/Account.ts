@@ -1,7 +1,7 @@
-import { Account } from 'utils/graphInterfaces';
+import type { IAccount } from 'utils/graphInterfaces';
 
-export const AccountType = {
-	id: (i: Account) => i?.id,
+export const Account = {
+	id: (i: IAccount) => i?.id,
 };
 
 export default Account;
