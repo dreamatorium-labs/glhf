@@ -3,22 +3,17 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Button, Hoverable, Input } from '@walless/gui';
 import Layout from 'components/Layout';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { gameState } from 'state/game';
 import { bangers, buttonStyle, colors, montserrat } from 'utils/style';
 import { useSnapshot } from 'valtio';
 
 export const ResultPage: FC = () => {
-	const router = useRouter();
 	const { gameName, domainName } = useSnapshot(gameState);
-	const domainFull = `${domainName}.glhf.world`;
+	const gameUrl = `https://${domainName}.glhf.world`;
 
 	const handleCopyPress = () => {
-		navigator.clipboard.writeText(domainFull);
-	};
-
-	const handlePlayPress = () => {
-		router.push('/tetris');
+		navigator.clipboard.writeText(gameUrl);
 	};
 
 	const suffix = (
@@ -31,12 +26,13 @@ export const ResultPage: FC = () => {
 					height={30}
 				/>
 			</Hoverable>
-			<Button
-				title="Play now"
-				style={[buttonStyle.button, styles.playBtn]}
-				titleStyle={buttonStyle.title}
-				onPress={handlePlayPress}
-			/>
+			<Link target="_blank" href={gameUrl}>
+				<Button
+					title="Play now"
+					style={[buttonStyle.button, styles.playBtn]}
+					titleStyle={buttonStyle.title}
+				/>
+			</Link>
 		</View>
 	);
 
@@ -59,7 +55,7 @@ export const ResultPage: FC = () => {
 				<Input
 					style={styles.inputContainer}
 					inputStyle={[styles.text, { width: 300 }]}
-					value={domainFull}
+					value={gameUrl}
 					suffix={suffix}
 				/>
 			</View>
