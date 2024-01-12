@@ -3,16 +3,22 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Button, Hoverable, Input } from '@walless/gui';
 import Layout from 'components/Layout';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { gameState } from 'state/game';
 import { bangers, buttonStyle, colors, montserrat } from 'utils/style';
 import { useSnapshot } from 'valtio';
 
 export const ResultPage: FC = () => {
+	const router = useRouter();
 	const { gameName, domainName } = useSnapshot(gameState);
 	const domainFull = `${domainName}.glhf.world`;
 
 	const handleCopyPress = () => {
 		navigator.clipboard.writeText(domainFull);
+	};
+
+	const handlePlayPress = () => {
+		router.push('/tetris');
 	};
 
 	const suffix = (
@@ -29,6 +35,7 @@ export const ResultPage: FC = () => {
 				title="Play now"
 				style={[buttonStyle.button, styles.playBtn]}
 				titleStyle={buttonStyle.title}
+				onPress={handlePlayPress}
 			/>
 		</View>
 	);
