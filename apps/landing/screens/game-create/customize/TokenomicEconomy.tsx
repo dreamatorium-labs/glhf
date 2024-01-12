@@ -57,11 +57,11 @@ export const TokenomicEconomy: FC = () => {
 				/>
 			</View>
 			<View style={sharedStyle.subFieldContainer}>
-				<Text style={sharedStyle.subField}>Token address</Text>
+				<Text style={sharedStyle.subField}>Owner wallet</Text>
 				<Input
 					style={[sharedStyle.subFieldInputContainer, styles.longInput]}
 					inputStyle={sharedStyle.subFieldInput}
-					placeholder="Enter token address here"
+					placeholder="Enter Avalanche wallet address"
 					onChangeText={handleChangeTokenAddress}
 					value={tokenAddress}
 				/>
