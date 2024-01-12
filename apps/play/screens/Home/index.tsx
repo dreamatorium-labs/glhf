@@ -1,24 +1,19 @@
-import type { FC } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+'use client';
 
-export const HomeScreen: FC = () => {
+import { useEffect, useState } from 'react';
+
+export const HomeScreen = () => {
+	const [height, setHeight] = useState(0);
+
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			setHeight(window.innerHeight);
+		}
+	}, []);
+
 	return (
-		<View style={styles.container}>
-			<Text style={styles.title}>Your game!</Text>
-		</View>
+		<iframe src="/game-tetris/index.html" style={{ border: 'none', height }} />
 	);
 };
 
 export default HomeScreen;
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		minHeight: '100vh',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	title: {
-		color: 'white',
-	},
-});
