@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
 		color: 'white',
 		fontSize: 25,
 		fontFamily: montserratLight.style.fontFamily,
-		fontWeight: '300',
+		fontWeight: montserratLight.style.fontWeight as never,
 	},
 	commandContainer: {
 		alignSelf: 'flex-start',
