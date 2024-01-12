@@ -9,10 +9,15 @@ import { useSnapshot } from 'valtio';
 
 export const ResultPage: FC = () => {
 	const { gameName, domainName } = useSnapshot(gameState);
+	const domainFull = `${domainName}.glhf.world`;
+
+	const handleCopyPress = () => {
+		navigator.clipboard.writeText(domainFull);
+	};
 
 	const suffix = (
 		<View style={styles.suffixContainer}>
-			<Hoverable>
+			<Hoverable onPress={handleCopyPress}>
 				<Image
 					src="/visual/copy-ic.svg"
 					alt="copy icon"
@@ -47,7 +52,7 @@ export const ResultPage: FC = () => {
 				<Input
 					style={styles.inputContainer}
 					inputStyle={[styles.text, { width: 300 }]}
-					value={`${domainName}.glhf.world`}
+					value={domainFull}
 					suffix={suffix}
 				/>
 			</View>
