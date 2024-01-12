@@ -3,10 +3,16 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Button } from '@walless/gui';
 import Layout from 'components/Layout';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { bangers, buttonStyle, montserratLight } from 'utils/style';
 
 export const HomePage: FC = () => {
+	const router = useRouter();
+
+	const handleCreatePress = () => {
+		router.push('/game-create/template');
+	};
+
 	return (
 		<Layout style={styles.container}>
 			<View style={{ flex: 1 }}>
@@ -16,13 +22,12 @@ export const HomePage: FC = () => {
 					game{' '}
 				</Text>
 				<View style={styles.commandContainer}>
-					<Link href="/game-create/template">
-						<Button
-							title="Create new game +"
-							style={buttonStyle.button}
-							titleStyle={buttonStyle.title}
-						/>
-					</Link>
+					<Button
+						title="Create new game +"
+						style={buttonStyle.button}
+						titleStyle={buttonStyle.title}
+						onPress={handleCreatePress}
+					/>
 				</View>
 			</View>
 			<Image
