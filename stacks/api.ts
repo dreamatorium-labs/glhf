@@ -6,7 +6,7 @@ import { apiDomainFromStage } from './util';
 export const ApiStack = ({ stack, app }: StackContext) => {
 	const domain = apiDomainFromStage(app.stage);
 	const graphql = new Function(stack, 'graphql', {
-		handler: 'apps/api/lambda',
+		handler: 'apps/api/lambda.handler',
 	});
 
 	const api = new Api(stack, 'api', {
