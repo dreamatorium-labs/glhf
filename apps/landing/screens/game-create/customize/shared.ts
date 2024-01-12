@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native';
-import { montserrat, montserratLight } from 'utils/style';
+import { montserrat, montserratLight, montserratMedium } from 'utils/style';
 
 export const sharedStyle = StyleSheet.create({
 	fieldContainer: {
-		gap: 10,
+		gap: 15,
 	},
 	field: {
-		fontFamily: montserrat.style.fontFamily,
+		fontFamily: montserratMedium.style.fontFamily,
 		fontWeight: 'bold',
 		color: '#ffffff',
 		fontSize: 15,
@@ -24,6 +24,8 @@ export const sharedStyle = StyleSheet.create({
 	},
 	subFieldInputContainer: {
 		borderRadius: 100,
+		backgroundColor: '#202015',
+		borderColor: '#2a342a',
 	},
 	subFieldInput: {
 		paddingVertical: 10,

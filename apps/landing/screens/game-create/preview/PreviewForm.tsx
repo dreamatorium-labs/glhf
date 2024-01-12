@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { gameState } from 'state/game';
-import { montserrat, montserratLight } from 'utils/style';
+import { montserrat, montserratLight, montserratMedium } from 'utils/style';
 import { useSnapshot } from 'valtio';
 
 export const PreviewForm = () => {
@@ -89,9 +89,8 @@ const styles = StyleSheet.create({
 		gap: 10,
 	},
 	fieldTitle: {
-		fontFamily: montserrat.style.fontFamily,
+		fontFamily: montserratMedium.style.fontFamily,
 		fontSize: 16,
-		fontWeight: '900',
 		color: '#ffffff',
 		opacity: 0.6,
 	},
@@ -106,14 +105,12 @@ const styles = StyleSheet.create({
 		width: 150,
 		fontFamily: montserratLight.style.fontFamily,
 		fontSize: 16,
-		fontWeight: '400',
 		color: '#ffffff',
 		opacity: 0.6,
 	},
 	subfieldContent: {
 		fontFamily: montserrat.style.fontFamily,
 		fontSize: 16,
-		fontWeight: '900',
 		color: '#ffffff',
 	},
 });

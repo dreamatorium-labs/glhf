@@ -5,7 +5,13 @@ import Layout from 'components/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
 import { gameState } from 'state/game';
-import { bangers, buttonStyle, colors, montserrat } from 'utils/style';
+import {
+	bangers,
+	buttonStyle,
+	colors,
+	montserrat,
+	montserratBold,
+} from 'utils/style';
 import { useSnapshot } from 'valtio';
 
 export const ResultPage: FC = () => {
@@ -84,6 +90,7 @@ const styles = StyleSheet.create({
 		color: '#ffffff',
 	},
 	highlight: {
+		fontFamily: montserratBold.style.fontFamily,
 		color: colors.primary,
 	},
 	previewImg: {

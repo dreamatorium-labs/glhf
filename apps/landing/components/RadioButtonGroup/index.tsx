@@ -1,9 +1,7 @@
 import type { FC } from 'react';
 import { useState } from 'react';
 import type { ViewStyle } from 'react-native';
-import { StyleSheet, Text, View } from 'react-native';
-import { Hoverable } from '@walless/gui';
-import { montserrat } from 'utils/style';
+import { StyleSheet, View } from 'react-native';
 
 import RadioButton from './RadioButton';
 
@@ -15,6 +13,8 @@ interface Props {
 export const RadioButtonGroup: FC<Props> = ({ onSelect, style }) => {
 	const [value, setValue] = useState('');
 
+	const itemList = ['Easy', 'Medium', 'Hard'];
+
 	const handleSelect = (value: string) => {
 		setValue(value);
 		onSelect(value);
@@ -22,27 +22,14 @@ export const RadioButtonGroup: FC<Props> = ({ onSelect, style }) => {
 
 	return (
 		<View style={[styles.container, style]}>
-			<Hoverable
-				style={styles.itemContainer}
-				onPress={() => handleSelect('Easy')}
-			>
-				<RadioButton active={value === 'Easy'} />
-				<Text style={styles.label}>Easy</Text>
-			</Hoverable>
-			<Hoverable
-				style={styles.itemContainer}
-				onPress={() => handleSelect('Medium')}
-			>
-				<RadioButton active={value === 'Medium'} />
-				<Text style={styles.label}>Medium</Text>
-			</Hoverable>
-			<Hoverable
-				style={styles.itemContainer}
-				onPress={() => handleSelect('Hard')}
-			>
-				<RadioButton active={value === 'Hard'} />
-				<Text style={styles.label}>Hard</Text>
-			</Hoverable>
+			{itemList.map((item) => (
+				<RadioButton
+					active={item === value}
+					key={item}
+					value={item}
+					onSelect={(value) => handleSelect(value)}
+				/>
+			))}
 		</View>
 	);
 };
@@ -52,15 +39,5 @@ export default RadioButtonGroup;
 const styles = StyleSheet.create({
 	container: {
 		gap: 10,
-	},
-	itemContainer: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		gap: 10,
-	},
-
-	label: {
-		fontFamily: montserrat.style.fontFamily,
-		color: '#8f8f8a',
 	},
 });

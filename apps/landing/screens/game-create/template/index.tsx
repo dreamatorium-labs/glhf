@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import GameTemplate from 'components/GameTemplate';
 import Layout from 'components/Layout';
 import ProgressIndicator from 'components/ProgressIndicator';
-import { bangers, montserrat } from 'utils/style';
+import { bangers, montserratMedium } from 'utils/style';
 
 export const GameTemplatePage: FC = () => {
 	return (
@@ -49,8 +49,7 @@ const styles = StyleSheet.create({
 	subTitle: {
 		color: 'white',
 		fontSize: 16,
-		fontFamily: montserrat.style.fontFamily,
-		fontWeight: '400',
+		fontFamily: montserratMedium.style.fontFamily,
 	},
 	templateContainer: {
 		flexDirection: 'row',
@@ -66,7 +65,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 	},
 	skeletonText: {
-		fontFamily: montserrat.style.fontFamily,
+		fontFamily: montserratMedium.style.fontFamily,
 		fontSize: 22,
 		fontWeight: '900',
 		color: '#8f8f8a',

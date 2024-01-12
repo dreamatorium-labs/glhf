@@ -4,7 +4,7 @@ import { Button } from '@walless/gui';
 import Layout from 'components/Layout';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { bangers, buttonStyle, montserratLight } from 'utils/style';
+import { bangers, buttonStyle, montserrat } from 'utils/style';
 
 export const HomePage: FC = () => {
 	const router = useRouter();
@@ -15,11 +15,10 @@ export const HomePage: FC = () => {
 
 	return (
 		<Layout style={styles.container}>
-			<View style={{ flex: 1 }}>
+			<View style={{ flex: 1, gap: 40 }}>
 				<Text style={styles.title}>CREATE YOUR FIRST GAME</Text>
 				<Text style={styles.subTitle}>
-					You{"'"}re on 5 minutes away to creating your own first blockchain
-					game{' '}
+					{`You're on 5 minutes away to creating \n your own first blockchain game`}
 				</Text>
 				<View style={styles.commandContainer}>
 					<Button
@@ -56,8 +55,8 @@ const styles = StyleSheet.create({
 	subTitle: {
 		color: 'white',
 		fontSize: 25,
-		fontFamily: montserratLight.style.fontFamily,
-		fontWeight: montserratLight.style.fontWeight as never,
+		fontFamily: montserrat.style.fontFamily,
+		fontWeight: '300',
 	},
 	commandContainer: {
 		alignSelf: 'flex-start',

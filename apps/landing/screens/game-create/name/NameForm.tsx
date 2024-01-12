@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Input } from '@walless/gui';
 import { gameActions, gameState } from 'state/game';
-import { montserrat } from 'utils/style';
+import { montserratLight, montserratMedium } from 'utils/style';
 import { useSnapshot } from 'valtio';
 
 export const NameForm = () => {
@@ -21,6 +21,7 @@ export const NameForm = () => {
 					style={styles.subfield}
 					inputStyle={styles.subFieldInput}
 					suffix={<Text style={styles.subFieldInput}>.glhf.world</Text>}
+					placeholderTextColor={'rgba(255, 255, 255, 0.5)'}
 					placeholder="thegreateescape"
 					value={domainName}
 					onChangeText={handleDomainChange}
@@ -31,6 +32,7 @@ export const NameForm = () => {
 				<Input
 					style={styles.subfield}
 					inputStyle={styles.subFieldInput}
+					placeholderTextColor={'rgba(255, 255, 255, 0.5)'}
 					placeholder="eg. The Great Escape"
 					value={gameName}
 					onChangeText={handleGameNameChange}
@@ -45,13 +47,13 @@ export default NameForm;
 const styles = StyleSheet.create({
 	container: {
 		paddingVertical: 20,
-		gap: 30,
+		gap: 40,
 	},
 	fieldContainer: {
-		gap: 10,
+		gap: 15,
 	},
 	field: {
-		fontFamily: montserrat.style.fontFamily,
+		fontFamily: montserratMedium.style.fontFamily,
 		fontWeight: 'bold',
 		color: '#ffffff',
 		fontSize: 15,
@@ -60,10 +62,12 @@ const styles = StyleSheet.create({
 		width: 350,
 		borderRadius: 100,
 		paddingRight: 20,
+		backgroundColor: '#202015',
+		borderColor: '#2a342a',
 	},
 	subFieldInput: {
 		paddingVertical: 15,
-		fontFamily: montserrat.style.fontFamily,
+		fontFamily: montserratLight.style.fontFamily,
 		color: '#ffffff',
 	},
 });

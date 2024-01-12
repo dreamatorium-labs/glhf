@@ -61,6 +61,7 @@ export const TokenomicEconomy: FC = () => {
 				<Input
 					style={[sharedStyle.subFieldInputContainer, styles.longInput]}
 					inputStyle={sharedStyle.subFieldInput}
+					placeholderTextColor={'rgba(255, 255, 255, 0.5)'}
 					placeholder="Enter Avalanche wallet address"
 					onChangeText={handleChangeTokenAddress}
 					value={tokenAddress}

@@ -20,6 +20,6 @@ export default CustomizeForm;
 const styles = StyleSheet.create({
 	container: {
 		paddingVertical: 15,
-		gap: 20,
+		gap: 30,
 	},
 });

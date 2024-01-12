@@ -10,7 +10,7 @@ import { Hoverable } from '@walless/gui';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { gameActions } from 'state/game';
-import { buttonStyle, montserrat, russo } from 'utils/style';
+import { buttonStyle, montserratBold, russo } from 'utils/style';
 
 export interface GameTemplateProps {
 	src: string;
@@ -112,17 +112,15 @@ const styles = StyleSheet.create({
 	},
 	category: {
 		fontFamily: russo.style.fontFamily,
-		fontSize: 11,
-		fontWeight: '300',
+		fontSize: 13,
 	},
 	titleContainer: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 	},
 	title: {
-		fontFamily: montserrat.style.fontFamily,
-		fontSize: 22,
-		fontWeight: 'bold',
+		fontFamily: montserratBold.style.fontFamily,
+		fontSize: 26,
 		color: '#ffffff',
 	},
 	overlay: {

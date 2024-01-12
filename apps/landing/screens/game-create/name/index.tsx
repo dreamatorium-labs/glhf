@@ -4,7 +4,7 @@ import CustomizeView from 'components/CustomizeView';
 import Layout from 'components/Layout';
 import ProgressIndicator from 'components/ProgressIndicator';
 import { useRouter } from 'next/router';
-import { bangers, buttonStyle, montserrat } from 'utils/style';
+import { bangers, buttonStyle, montserratMedium } from 'utils/style';
 
 import NameForm from './NameForm';
 
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
 	subTitle: {
 		color: 'white',
 		fontSize: 16,
-		fontFamily: montserrat.style.fontFamily,
+		fontFamily: montserratMedium.style.fontFamily,
 		fontWeight: '400',
 		lineHeight: 25,
 	},
