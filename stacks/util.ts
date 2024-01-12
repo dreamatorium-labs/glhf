@@ -4,7 +4,7 @@ const landingAlias: Record<string, string> = {
 	development: 'dev.',
 };
 
-export const sslArn = process.env.SSL_ARN;
+export const sslArn = process.env.SSL_ARN as string;
 
 export const landingDomainFromStage = (stage: string) => {
 	const prefix = landingAlias[stage] || `${stage}.`;
