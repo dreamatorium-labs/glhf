@@ -29,7 +29,6 @@ export const HomePage: FC = () => {
 				style={styles.landingImg}
 				src="/visual/landing.png"
 				alt="landing visual"
-				layout="responsive"
 				width={806}
 				height={605}
 			/>
@@ -61,5 +60,6 @@ const styles = StyleSheet.create({
 	},
 	landingImg: {
 		flex: 1,
+		width: '100%',
 	},
 });
