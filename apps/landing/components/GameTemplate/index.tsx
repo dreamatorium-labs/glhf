@@ -58,6 +58,7 @@ export const GameTemplate: FC<GameTemplateProps> = ({
 			onHoverIn={() => (opacity.value = withTiming(1))}
 			onHoverOut={() => (opacity.value = withTiming(0))}
 			hoverOpacity={1}
+			onPress={handlePress}
 		>
 			<Image src={src} alt={alt} width={355} height={283} />
 			<View style={styles.detailContainer}>
