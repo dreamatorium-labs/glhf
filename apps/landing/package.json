@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@metamask/sdk-react": "^0.14.2",
     "@react-native-community/slider": "^4.5.0",
     "@walless/gui": "^0.0.3",
     "@walless/icons": "^0.0.2",
