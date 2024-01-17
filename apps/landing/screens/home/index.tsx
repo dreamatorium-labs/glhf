@@ -40,8 +40,6 @@ export const HomePage: FC = () => {
 	);
 };
 
-export default HomePage;
-
 const styles = StyleSheet.create({
 	container: {
 		flexDirection: 'row',

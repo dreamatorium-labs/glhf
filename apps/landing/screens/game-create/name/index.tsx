@@ -42,8 +42,6 @@ export const NameGamePage = () => {
 	);
 };
 
-export default NameGamePage;
-
 const styles = StyleSheet.create({
 	container: {
 		gap: 40,

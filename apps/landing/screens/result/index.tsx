@@ -69,8 +69,6 @@ export const ResultPage: FC = () => {
 	);
 };
 
-export default ResultPage;
-
 const styles = StyleSheet.create({
 	container: {
 		alignItems: 'center',

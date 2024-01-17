@@ -42,8 +42,6 @@ export const PreviewPublishPage = () => {
 	);
 };
 
-export default PreviewPublishPage;
-
 const styles = StyleSheet.create({
 	container: {
 		gap: 40,

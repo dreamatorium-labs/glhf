@@ -32,8 +32,6 @@ export const GameTemplatePage: FC = () => {
 	);
 };
 
-export default GameTemplatePage;
-
 const styles = StyleSheet.create({
 	container: {
 		gap: 40,
