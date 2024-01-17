@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import Link from 'next/link';
 import { colors, russo } from 'utils/style';
 
+import { SignIn } from './SignIn';
+
 export const PageNavigation: FC = () => {
 	return (
 		<View style={styles.container}>
@@ -10,7 +12,7 @@ export const PageNavigation: FC = () => {
 				<Text style={styles.branding}>glhf.world</Text>
 			</Link>
 			<View>
-				<Text style={{ color: 'white' }}>Account</Text>
+				<SignIn />
 			</View>
 		</View>
 	);
